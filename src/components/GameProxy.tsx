@@ -11,7 +11,7 @@ interface GameProxyProps {
 }
 
 const GameProxy = ({ game, isOpen, onClose }: GameProxyProps) => {
-  const [isFullscreen, setIsFullscreen] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
