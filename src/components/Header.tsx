@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import LoginModal from "./LoginModal";
 import playGameLogo from "@/assets/play-game-logo.png";
 
 interface HeaderProps {
@@ -78,12 +79,12 @@ const Header = ({ onSearch }: HeaderProps) => {
                 About
               </Link>
             </Button>
-            <Button asChild variant="outline" size="sm" className="border-primary/50 hover:bg-primary/10 transition-smooth">
-              <Link to="/login">
+            <LoginModal>
+              <Button variant="outline" size="sm" className="border-primary/50 hover:bg-primary/10 transition-smooth">
                 <User className="h-4 w-4 mr-2" />
                 Login
-              </Link>
-            </Button>
+              </Button>
+            </LoginModal>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -119,12 +120,12 @@ const Header = ({ onSearch }: HeaderProps) => {
                   About
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="sm" className="justify-start border-primary/50 hover:bg-primary/10 transition-smooth">
-                <Link to="/login">
+              <LoginModal>
+                <Button variant="outline" size="sm" className="justify-start border-primary/50 hover:bg-primary/10 transition-smooth">
                   <User className="h-4 w-4 mr-2" />
                   Login
-                </Link>
-              </Button>
+                </Button>
+              </LoginModal>
             </nav>
           </div>
         )}
