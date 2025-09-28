@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Play-Game Design System - Gaming-inspired colors and effects */
+
+@layer base {
+  :root {
+    /* Gaming Background - Deep space blue */
+    --background: 230 35% 7%;
+    --foreground: 210 40% 98%;
+
+    /* Cards with gaming glow */
+    --card: 230 30% 11%;
+    --card-foreground: 210 40% 98%;
+
+    /* Popover elements */
+    --popover: 230 30% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Electric gaming blue */
+    --primary: 210 100% 56%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 210 100% 70%;
+
+    /* Secondary - Purple gaming accent */
+    --secondary: 280 70% 45%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted elements */
+    --muted: 230 25% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Accent - Neon cyan */
+    --accent: 180 100% 50%;
+    --accent-foreground: 230 35% 7%;
+
+    /* Gaming success green */
+    --success: 120 60% 50%;
+    --success-foreground: 210 40% 98%;
+
+    /* Destructive - Gaming red */
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders and inputs */
+    --border: 230 20% 20%;
+    --input: 230 20% 20%;
+    --ring: 210 100% 56%;
+
+    /* Gaming gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--primary)));
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)), hsl(230 25% 15%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(230 40% 12%));
+
+    /* Gaming shadows and glows */
+    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 8px 32px hsl(230 35% 4% / 0.5);
+    --shadow-button: 0 4px 16px hsl(var(--primary) / 0.4);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Keep the same dark theme as default since we're gaming-focused */
+    --background: 230 35% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 30% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 30% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 100% 56%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 280 70% 45%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 230 25% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 180 100% 50%;
+    --accent-foreground: 230 35% 7%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 230 20% 20%;
+    --input: 230 20% 20%;
+    --ring: 210 100% 56%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-hero);
+    min-height: 100vh;
+  }
+
+  /* Gaming scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-glow));
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+}
