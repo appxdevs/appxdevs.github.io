@@ -1,6 +1,6 @@
 import { useState } from "react";
 import GameCard, { Game } from "./GameCard";
-import GameModal from "./GameModal";
+import GameProxy from "./GameProxy";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
@@ -90,8 +90,8 @@ const GameGrid = ({ games, searchQuery = "", selectedCategory = "all" }: GameGri
           </>
         )}
 
-        {/* Game Modal */}
-        <GameModal 
+        {/* Game Proxy */}
+        <GameProxy 
           game={selectedGame}
           isOpen={isModalOpen}
           onClose={() => {

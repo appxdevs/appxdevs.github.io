@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import CategoryFilter from "@/components/CategoryFilter";
 import GameGrid from "@/components/GameGrid";
@@ -30,6 +31,7 @@ const Index = () => {
         searchQuery={searchQuery}
         selectedCategory={selectedCategory}
       />
+      <Footer />
     </div>
   );
 };

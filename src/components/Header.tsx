@@ -1,7 +1,8 @@
-import { Search, Menu, User, Trophy, Info } from "lucide-react";
+import { Search, Menu, User, Trophy, Info, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import playGameLogo from "@/assets/play-game-logo.png";
 
 interface HeaderProps {
@@ -27,7 +28,7 @@ const Header = ({ onSearch }: HeaderProps) => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo and Brand */}
-          <div className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <div className="relative">
               <img 
                 src={playGameLogo} 
@@ -41,7 +42,7 @@ const Header = ({ onSearch }: HeaderProps) => {
               </h1>
               <p className="text-xs text-muted-foreground">Unlimited Gaming Fun</p>
             </div>
-          </div>
+          </Link>
 
           {/* Search Bar */}
           <div className="flex-1 max-w-md mx-4">
@@ -59,17 +60,29 @@ const Header = ({ onSearch }: HeaderProps) => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-2">
-            <Button variant="ghost" size="sm" className="text-foreground hover:text-primary transition-smooth">
-              <Trophy className="h-4 w-4 mr-2" />
-              Leaderboard
+            <Button asChild variant="ghost" size="sm" className="text-foreground hover:text-primary transition-smooth">
+              <Link to="/">
+                <Home className="h-4 w-4 mr-2" />
+                Home
+              </Link>
             </Button>
-            <Button variant="ghost" size="sm" className="text-foreground hover:text-primary transition-smooth">
-              <Info className="h-4 w-4 mr-2" />
-              About
+            <Button asChild variant="ghost" size="sm" className="text-foreground hover:text-primary transition-smooth">
+              <Link to="/leaderboard">
+                <Trophy className="h-4 w-4 mr-2" />
+                Leaderboard
+              </Link>
             </Button>
-            <Button variant="outline" size="sm" className="border-primary/50 hover:bg-primary/10 transition-smooth">
-              <User className="h-4 w-4 mr-2" />
-              Login
+            <Button asChild variant="ghost" size="sm" className="text-foreground hover:text-primary transition-smooth">
+              <Link to="/about">
+                <Info className="h-4 w-4 mr-2" />
+                About
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="sm" className="border-primary/50 hover:bg-primary/10 transition-smooth">
+              <Link to="/login">
+                <User className="h-4 w-4 mr-2" />
+                Login
+              </Link>
             </Button>
           </nav>
 
@@ -88,17 +101,29 @@ const Header = ({ onSearch }: HeaderProps) => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pt-4 border-t border-border/50">
             <nav className="flex flex-col gap-2">
-              <Button variant="ghost" size="sm" className="justify-start text-foreground hover:text-primary transition-smooth">
-                <Trophy className="h-4 w-4 mr-2" />
-                Leaderboard
+              <Button asChild variant="ghost" size="sm" className="justify-start text-foreground hover:text-primary transition-smooth">
+                <Link to="/">
+                  <Home className="h-4 w-4 mr-2" />
+                  Home
+                </Link>
               </Button>
-              <Button variant="ghost" size="sm" className="justify-start text-foreground hover:text-primary transition-smooth">
-                <Info className="h-4 w-4 mr-2" />
-                About
+              <Button asChild variant="ghost" size="sm" className="justify-start text-foreground hover:text-primary transition-smooth">
+                <Link to="/leaderboard">
+                  <Trophy className="h-4 w-4 mr-2" />
+                  Leaderboard
+                </Link>
               </Button>
-              <Button variant="outline" size="sm" className="justify-start border-primary/50 hover:bg-primary/10 transition-smooth">
-                <User className="h-4 w-4 mr-2" />
-                Login
+              <Button asChild variant="ghost" size="sm" className="justify-start text-foreground hover:text-primary transition-smooth">
+                <Link to="/about">
+                  <Info className="h-4 w-4 mr-2" />
+                  About
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="sm" className="justify-start border-primary/50 hover:bg-primary/10 transition-smooth">
+                <Link to="/login">
+                  <User className="h-4 w-4 mr-2" />
+                  Login
+                </Link>
               </Button>
             </nav>
           </div>
